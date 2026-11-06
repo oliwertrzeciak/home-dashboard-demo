@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- Domyślny motyw: paleta (data-theme) i neonowy wygląd (data-look, src/styles/neon.css).
+     Lista motywów i przełączanie: src/hooks/useTheme.ts -->
+<html lang="pl" data-theme="cyberpunk" data-look="neon">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Dashboard</title>
+    <!-- Motyw zapisany na tym urządzeniu (useTheme.ts) - ustawiony przed narysowaniem strony,
+         żeby przy starcie nie mignął domyślny -->
+    <script>
+      try {
+        const root = document.documentElement
+        const theme = localStorage.getItem('theme')
+        const look = localStorage.getItem('theme-look') // '' = motyw bez looku (klasyczny)
+        if (theme) root.dataset.theme = theme
+        if (look) root.dataset.look = look
+        else if (look === '') delete root.dataset.look
+      } catch {}
+    </script>
+    <script type="module" crossorigin src="./assets/index-Dd-39vBe.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-hzn2YUMO.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
